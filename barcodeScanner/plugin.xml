@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-    id="com.example.aaa"
+    id="com.mawujun.plugin.barcodeScanner"
     version="0.0.1">
     <name>BarcodeScanner</name>
     <description>BarcodeScanner Description</description>
@@ -15,10 +15,10 @@
 	
 	
     <platform name="android">
-        <source-file src="src/android/BarcodeScanner.java" target-dir="src/com/example/aaa" />
+        <source-file src="src/android/BarcodeScanner.java" target-dir="src/com/mawujun/plugin/barcodeScanner" />
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="BarcodeScanner">
-                <param name="android-package" value="com.example.aaa.BarcodeScanner"/>
+                <param name="android-package" value="com.mawujun.plugin.barcodeScanner.BarcodeScanner"/>
             </feature>
         </config-file>
         <config-file target="AndroidManifest.xml" parent="/*">

@@ -100,13 +100,5 @@ BarcodeScanner.prototype.encode = function(type, data, success, fail, options) {
 var barcodeScanner = new BarcodeScanner();
 module.exports = barcodeScanner;
 
-//cordova.addConstructor(function() {
-//  //������֧��window.plugins,�򴴽�������   
-//    if(!window.plugins){   
-//        window.plugins={};   
-//    }   
-//    window.plugins.barcodeScanner=new BarcodeScanner(); 
-//	//cordova.addPlugin('barcodeScanner', new BarcodeScanner());
-//	PluginManager.addService("BarcodeScanner","com.easyway.barcode.BarcodeScanner");
-//});
+
 

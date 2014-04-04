@@ -1,4 +1,4 @@
-package com.example.aaa;
+package com.mawujun.plugin.barcodeScanner;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
@@ -162,6 +162,7 @@ public class BarcodeScanner extends CordovaPlugin {
 		public void scan(String barcodeFormats, String installTitle, String installMessage, String yesString, String noString ) {
 		    Intent intentScan = new Intent("com.google.zxing.client.android.SCAN");
 		   // intentScan.addCategory(Intent.CATEGORY_DEFAULT);
+		    intentScan.
 
 		    //设置扫描特定类型的二维码
 		    //if (barcodeFormats != null) {
@@ -186,6 +187,15 @@ public class BarcodeScanner extends CordovaPlugin {
 	     * @param intent			An Intent, which can return result data to the caller (various data can be attached to Intent "extras").
 	     */
 		public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+			//这是所有可能的值
+//			String contents = intent.getStringExtra("SCAN_RESULT");
+//	        String formatName = intent.getStringExtra("SCAN_RESULT_FORMAT");
+//	        byte[] rawBytes = intent.getByteArrayExtra("SCAN_RESULT_BYTES");
+//	        int intentOrientation = intent.getIntExtra("SCAN_RESULT_ORIENTATION", Integer.MIN_VALUE);
+//	        Integer orientation = intentOrientation == Integer.MIN_VALUE ? null : intentOrientation;
+//	        String errorCorrectionLevel = intent.getStringExtra("SCAN_RESULT_ERROR_CORRECTION_LEVEL");
+			
+			
 			if (requestCode == REQUEST_CODE) {
 				if (resultCode == Activity.RESULT_OK) {
 					String contents = intent.getStringExtra("SCAN_RESULT");
@@ -219,13 +229,11 @@ public class BarcodeScanner extends CordovaPlugin {
 					dialog.setPositiveButton(yesString, new DialogInterface.OnClickListener() {
 						public void onClick(DialogInterface dlg, int i) {
 							dlg.dismiss();
-							//Intent intent = new Intent(Intent.ACTION_VIEW,
-							//						   Uri.parse("http://market.android.com/search?q=pname:com.google.zxing.client.android")
-							//						   );
+
 							//以后换成本地的apk
-							Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("https://github.com/zxing/zxing/releases"));
-							//intent.setData(Uri.parse("https://github.com/zxing/zxing/releases"));
-							//context.startActivity(in);
+							//Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("https://github.com/zxing/zxing/releases"));
+							Uri uri = Uri.parse("market://details?id=" + packageName);
+						    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
 							try {
 								context.startActivity(intent);
 							} catch (ActivityNotFoundException e) {
