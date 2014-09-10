@@ -20,6 +20,7 @@ import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
 import com.google.zxing.ResultMetadataType;
 import com.google.zxing.ResultPoint;
+import com.google.zxing.client.android.R;
 import com.google.zxing.client.android.camera.CameraManager;
 import com.google.zxing.client.android.history.HistoryActivity;
 import com.google.zxing.client.android.history.HistoryItem;
@@ -61,6 +62,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.google.zxing.FakeR;
 
 import java.io.IOException;
@@ -443,6 +445,14 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
         }
         break;
     }
+    
+//    SurfaceView surfaceView = (SurfaceView)findViewById(R.id.preview_view);
+//    SurfaceHolder surfaceHolder = surfaceView.getHolder(); 
+//    initCamera(surfaceHolder);
+//
+//    if (handler != null) {
+//    	handler.restartPreviewAndDecode();
+//    }
   }
 
   /**

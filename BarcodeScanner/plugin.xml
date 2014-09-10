@@ -111,10 +111,12 @@
 			<uses-permission android:name="android.permission.BROADCAST_STICKY" />
             
         </config-file>
-
+<!--
          <source-file src="src/android/captureactivity_portrait.jar" target-dir="libs"/>
+         -->
+          <source-file src="src/android/LibraryProject/bin/captureactivity.jar" target-dir="libs"/>
 
-        <!--
+        <!--\
            LibraryProject/res/*.*
             search: (src/android/LibraryProject/(.+?)/[^/]+)$
             replace: <source-file src="$1" target-dir="$2"/>
